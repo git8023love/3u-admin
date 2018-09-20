@@ -1,0 +1,239 @@
+.panel-header {
+    background-image: url("../image/head_tag.png");
+}
+
+.as_nav {
+    color: blue;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.addiv {
+    text-align: center;
+}
+
+.adspan,.search_span,.nav_down {
+    width: 100px;
+    height: 30px;
+    background-color: #E1E1E1;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    color: #007FFF;
+    margin-right: 5px;
+}
+
+#convenient span {
+    background-color: red;
+}
+
+.nav_count,.nav_setup,.nav_channel,.nav_deviceInfo {
+    width: 100px;
+    height: 20px;
+    display: inline-table;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #007FFF;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #E1E1E1;
+}
+
+.select_span {
+    background-color: #AAD4FF;
+}
+
+.appinfo_stype {
+    cursor: pointer;
+    color: #0052A3;
+    font-weight: bold;
+}
+
+.upload_list li,.upload_list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.upfile {
+    position: absolute;
+    top: -100px;
+}
+
+.upFileBtn {
+    width: 102px;
+    height: 34px;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    cursor: pointer;
+}
+
+.filetitle {
+    text-align: right;
+    font-size: 12px;
+    width: 55px;
+}
+
+.upload_list .upload_ico,.upload_list .upload_img,.upload_list .upload_pak
+{
+    border-bottom: 1px dashed #39867B;
+    margin-bottom: 10px;
+}
+
+.bg_progress {
+    border: 1px #D4D4FF solid;
+    width: 200px;
+    height: 15px;
+}
+
+.load_progress {
+    width: 0%;
+    height: 100%;
+    background-color: #55AAFF;
+    text-align: center;
+    font-size: 12px;
+    color: red;
+}
+
+.app_info {
+    text-align: right;
+    font-size: 12px;
+}
+.w100{width:100px;}
+.error {
+    font-size: 12px;
+    color: red;
+}
+
+.ok {
+    background: url("../image/ok.png");
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.nav_click,.music_click {
+    width: 100px;
+    height: 30px;
+    background-color: #E1E1E1;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    color: #007FFF;
+    margin-right: 5px;
+}
+
+div.grade select {
+    width: 220px;
+    height: 300px;
+}
+
+div.grade table td {
+    text-align: center;
+    color: #008000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+div.grade table td option{
+    font-size: 15px;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+dl.paper {
+    width: 200px;
+    height: 300px;
+    border: 1px #A7C7DC solid;
+    float: left;
+    overflow: hidden;
+}
+
+dl.paper dt {
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 1px double #A7C7DC;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    display: block;
+    font-size: 175px;
+    font-family: Arial;
+    border: 1px solid #eee;
+
+}
+
+dl.paper dt img {
+    vertical-align: middle;
+    height:220px;
+}
+
+dl.paper dd {
+    height: 50px;
+}
+
+dl.paper dd table{
+    width:200px;
+}
+
+dl.paper dd table td {
+    text-align: left;
+    font-size: 12px;
+    border: 1px #ccc solid;
+}
+
+
+#load_progress td {
+    width: 300px;
+    height:100px;
+    border: 1px #ccc solid;
+}
+#load_progress div{
+    color: #F65D20;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+#load_progress div input {
+    background: #0092EF;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+/*
+.as_nav{
+	height: 30px;
+}
+*/
+
+
+.common_form table { margin:auto; }
+.common_form table tr { margin:5px 0px; display:block; }
+.common_form table tr td { padding-right:10px; }
+.common_form table .common_submit { margin:auto; display:block; }
+
+.ft-carousel {position: relative;width:1000px;height:720px;overflow: hidden;text-align: center;line-height: 720px}
+.ft-carousel .carousel-inner {position: absolute;left: 0;top: 0;height: 100%;}
+.ft-carousel .carousel-inner .carousel-item {list-style-type:none; float: left;height: 100%; width: 1000px}
+/*.ft-carousel .carousel-item img {width: 100%;}*/
+.ft-carousel .carousel-indicators1 {position: absolute;left: 0;bottom: 10px;width: 100%;text-align: center;font-size: 0;}
+.ft-carousel .carousel-indicators1 span {display: inline-block;width: 12px;height: 12px;background-color: #fff;margin: 0 4px;border-radius: 50%;cursor: pointer;}
+.ft-carousel .carousel-indicators1 span.active {background-color: #de3a3a;}
+.ft-carousel .carousel-btn {position: absolute;	top: 50%;width: 50px;height: 45px;margin-top: -25px;cursor: pointer;}
+.ft-carousel .carousel-prev-btn {left: 0;background: url(../image/prev.png) no-repeat;}
+.ft-carousel .carousel-next-btn {right: 0;background: url(../image/next.png) no-repeat;}

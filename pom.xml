@@ -1,0 +1,158 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.fkit</groupId>
+  <artifactId>3u-admin</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>3u-admin</name>
+  <description>3U Tools 后台管理系统</description>
+  
+  <!--   
+		spring-boot-starter-parent是Spring Boot的核心启动器，
+		包含了自动配置、日志和YAML等大量默认的配置，大大简化了我们的开发。
+		引入之后相关的starter引入就不需要添加version配置，
+	    spring boot会自动选择最合适的版本进行添加。
+	 -->
+  <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.0.RELEASE</version>
+		<relativePath/> 
+	</parent>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	
+  <dependencies>
+  
+  	<!-- 添加spring-boot-starter-web模块依赖 -->
+  	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-aop</artifactId>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-jdbc</artifactId>
+	  </dependency>
+
+	
+	<!-- 添加 servlet 依赖. -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+    	
+		<!-- 添加 JSTL（JSP Standard Tag Library，JSP标准标签库) -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
+		<!--添加 tomcat 的支持.-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Jasper是tomcat中使用的JSP引擎，运用tomcat-embed-jasper可以将项目与tomcat分开 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+	  <dependency>
+		  <groupId>mysql</groupId>
+		  <artifactId>mysql-connector-java</artifactId>
+		  <version>5.1.16</version>
+	  </dependency>
+
+      <!-- MyBatis -->
+      <dependency>
+          <groupId>org.mybatis.spring.boot</groupId>
+          <artifactId>mybatis-spring-boot-starter</artifactId>
+          <version>1.3.1</version>
+      </dependency>
+
+	  <dependency>
+		  <groupId>org.mybatis.generator</groupId>
+		  <artifactId>mybatis-generator-core</artifactId>
+		  <version>1.3.5</version>
+	  </dependency>
+
+      <!-- Mybatis pageHelper -->
+      <dependency>
+          <groupId>com.github.pagehelper</groupId>
+          <artifactId>pagehelper-spring-boot-starter</artifactId>
+          <version>1.2.3</version>
+      </dependency>
+
+      <!-- 数据库连接池 -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>druid</artifactId>
+          <version>1.1.6</version>
+      </dependency>
+
+	  <dependency>
+		  <groupId>org.json</groupId>
+		  <artifactId>json</artifactId>
+		  <version>20180130</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.jsoup</groupId>
+		  <artifactId>jsoup</artifactId>
+		  <version>1.11.3</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>commons-httpclient</groupId>
+		  <artifactId>commons-httpclient</artifactId>
+		  <version>3.1</version>
+	  </dependency>
+
+	  <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>3u-admin</finalName>
+	  <plugins>
+		  <plugin>
+			  <groupId>org.springframework.boot</groupId>
+			  <artifactId>spring-boot-maven-plugin</artifactId>
+			  <configuration>
+				  <fork>true</fork>
+			  </configuration>
+		  </plugin>
+
+		  <plugin>
+			  <groupId>org.mybatis.generator</groupId>
+			  <artifactId>mybatis-generator-maven-plugin</artifactId>
+			  <version>1.3.1</version>
+			  <configuration>
+				  <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+				  <overwrite>true</overwrite>
+				  <verbose>true</verbose>
+			  </configuration>
+		  </plugin>
+	  </plugins>
+  </build>
+</project>

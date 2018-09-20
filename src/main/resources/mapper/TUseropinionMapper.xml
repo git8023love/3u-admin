@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com._3u.dao.TUseropinionMapper" >
+  <resultMap id="BaseResultMap" type="com._3u.mapper.TUseropinion" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="Pcguid" property="pcguid" jdbcType="VARCHAR" />
+    <result column="Pcos" property="pcos" jdbcType="VARCHAR" />
+    <result column="Pcvs" property="pcvs" jdbcType="VARCHAR" />
+    <result column="Ip" property="ip" jdbcType="VARCHAR" />
+    <result column="Type" property="type" jdbcType="VARCHAR" />
+    <result column="Context" property="context" jdbcType="VARCHAR" />
+    <result column="ContactWay" property="contactway" jdbcType="VARCHAR" />
+    <result column="Image" property="image" jdbcType="VARCHAR" />
+    <result column="ServerNum" property="servernum" jdbcType="INTEGER" />
+    <result column="Status" property="status" jdbcType="INTEGER" />
+    <result column="Note" property="note" jdbcType="VARCHAR" />
+    <result column="OperUser" property="operuser" jdbcType="VARCHAR" />
+    <result column="OperTime" property="opertime" jdbcType="TIMESTAMP" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, Pcguid, Pcos, Pcvs, Ip, Type, Context, ContactWay, Image, ServerNum, Status, 
+    Note, OperUser, OperTime, CreateTime
+  </sql>
+  <select id="findAllOpinion" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_useropinion
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_useropinion
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_useropinion
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com._3u.mapper.TUseropinion" >
+    insert into t_useropinion (Id, Pcguid, Pcos, 
+      Pcvs, Ip, Type, Context, 
+      ContactWay, Image, ServerNum, 
+      Status, Note, OperUser, 
+      OperTime, CreateTime)
+    values (#{id,jdbcType=INTEGER}, #{pcguid,jdbcType=VARCHAR}, #{pcos,jdbcType=VARCHAR}, 
+      #{pcvs,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{context,jdbcType=VARCHAR}, 
+      #{contactway,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{servernum,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR}, #{operuser,jdbcType=VARCHAR}, 
+      #{opertime,jdbcType=TIMESTAMP}, #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com._3u.mapper.TUseropinion" >
+    insert into t_useropinion
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="pcguid != null" >
+        Pcguid,
+      </if>
+      <if test="pcos != null" >
+        Pcos,
+      </if>
+      <if test="pcvs != null" >
+        Pcvs,
+      </if>
+      <if test="ip != null" >
+        Ip,
+      </if>
+      <if test="type != null" >
+        Type,
+      </if>
+      <if test="context != null" >
+        Context,
+      </if>
+      <if test="contactway != null" >
+        ContactWay,
+      </if>
+      <if test="image != null" >
+        Image,
+      </if>
+      <if test="servernum != null" >
+        ServerNum,
+      </if>
+      <if test="status != null" >
+        Status,
+      </if>
+      <if test="note != null" >
+        Note,
+      </if>
+      <if test="operuser != null" >
+        OperUser,
+      </if>
+      <if test="opertime != null" >
+        OperTime,
+      </if>
+      <if test="createtime != null" >
+        CreateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pcguid != null" >
+        #{pcguid,jdbcType=VARCHAR},
+      </if>
+      <if test="pcos != null" >
+        #{pcos,jdbcType=VARCHAR},
+      </if>
+      <if test="pcvs != null" >
+        #{pcvs,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="context != null" >
+        #{context,jdbcType=VARCHAR},
+      </if>
+      <if test="contactway != null" >
+        #{contactway,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="servernum != null" >
+        #{servernum,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="operuser != null" >
+        #{operuser,jdbcType=VARCHAR},
+      </if>
+      <if test="opertime != null" >
+        #{opertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com._3u.mapper.TUseropinion" >
+    update t_useropinion
+    <set >
+      <if test="pcguid != null" >
+        Pcguid = #{pcguid,jdbcType=VARCHAR},
+      </if>
+      <if test="pcos != null" >
+        Pcos = #{pcos,jdbcType=VARCHAR},
+      </if>
+      <if test="pcvs != null" >
+        Pcvs = #{pcvs,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        Ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        Type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="context != null" >
+        Context = #{context,jdbcType=VARCHAR},
+      </if>
+      <if test="contactway != null" >
+        ContactWay = #{contactway,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        Image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="servernum != null" >
+        ServerNum = #{servernum,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="note != null" >
+        Note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="operuser != null" >
+        OperUser = #{operuser,jdbcType=VARCHAR},
+      </if>
+      <if test="opertime != null" >
+        OperTime = #{opertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null" >
+        CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com._3u.mapper.TUseropinion" >
+    update t_useropinion
+    set Pcguid = #{pcguid,jdbcType=VARCHAR},
+      Pcos = #{pcos,jdbcType=VARCHAR},
+      Pcvs = #{pcvs,jdbcType=VARCHAR},
+      Ip = #{ip,jdbcType=VARCHAR},
+      Type = #{type,jdbcType=VARCHAR},
+      Context = #{context,jdbcType=VARCHAR},
+      ContactWay = #{contactway,jdbcType=VARCHAR},
+      Image = #{image,jdbcType=VARCHAR},
+      ServerNum = #{servernum,jdbcType=INTEGER},
+      Status = #{status,jdbcType=INTEGER},
+      Note = #{note,jdbcType=VARCHAR},
+      OperUser = #{operuser,jdbcType=VARCHAR},
+      OperTime = #{opertime,jdbcType=TIMESTAMP},
+      CreateTime = #{createtime,jdbcType=TIMESTAMP}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
